@@ -1,0 +1,373 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+html {
+    font: bold 2.2vh/1em "Aleo", "Tahoma";
+    color: #000;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /*оптимизация выравнивания шрифта относительно центра строки*/
+    text-rendering: optimizeLegibility;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    /* webkit */
+    width: 0;
+    height: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input:-webkit-autofill {
+    box-shadow: inset 0 0 0 1000px #fff;
+
+    -webkit-text-fill-color: #000;
+}
+
+input {
+    border-radius: 0;
+}
+
+input::placeholder {
+    opacity: 1;
+}
+
+input:invalid {
+    box-shadow: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    appearance: none;
+}
+
+.ancients,
+.levels-list,
+.result-cards {
+    background: #000 url(../assets/home.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.ancients-list {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 25vh);
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 10%;
+}
+
+.ancients-list__elem {
+    width: 100%;
+    padding-bottom: 130%;
+    position: relative;
+    background-color: black;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.ancients-list__elem:hover,
+.ancients-list__elem--active {
+    box-shadow: 0 0 2px 2px gold;
+    transform: scale(1.1);
+}
+
+.ancients-list__elem img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-text {
+    padding: 0;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(202, 178, 41);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.info-text-level {
+    position: static;
+    transform: translate(0, 0);
+}
+
+.levels-list {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.result-cards {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.result-cards__structure {
+    width: 23vh;
+    height: 23vh;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.result-cards__stage {
+    position: relative;
+    width: 23vh;
+    padding: 1vh 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.result-cards__stage:not(:last-of-type) {
+    border-bottom: 1px solid gold;
+}
+
+.result-cards__stage--first::before {
+    content: "1 stage";
+}
+
+.result-cards__stage--second::before {
+    content: "2 stage";
+}
+
+.result-cards__stage--third::before {
+    content: "3 stage";
+}
+
+.result-cards__stage::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-105%, -50%);
+    font: 400 1.6vh/1em "Aleo", "Tahoma";
+    color: gold;
+}
+
+.count-res-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5.2vh;
+    height: 5vh;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.result-cards__easy {
+    background-color: rgb(58, 148, 58);
+}
+
+.result-cards__normal {
+    background-color: rgb(192, 117, 30);
+}
+
+.result-cards__hard {
+    background-color: rgb(48, 48, 208);
+}
+
+.cards {
+    width: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-cards {
+    width: 35%;
+    padding-bottom: 50%;
+    background: url("../assets/mythicCardBackground.jpg") center center no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease 0s;
+}
+
+.close-cards:hover {
+    transform: scale(1.05);
+}
+
+.close-cards--hide {
+    background: none;
+    cursor: auto;
+}
+
+.open-cards {
+    width: 35%;
+    padding-bottom: 50%;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+.levels-list input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.levels-list label {
+    width: 25vh;
+    padding: 1vh;
+    border: 1px solid white;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 2vh;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.levels-list input:checked + label {
+    border-color: gold;
+    background-color: gold;
+    color: black;
+}
+
+.levels-list input:disabled + label {
+    opacity: 0.5;
+    cursor: auto;
+}
+
+.levels-list label:hover {
+    border-color: gold;
+    color: gold;
+}
+
+.levels-list input:disabled + label:hover {
+    border-color: white;
+    color: white;
+}
+
+.get-up,
+.get-again {
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+    width: 8vh;
+    height: 8vh;
+    border: none;
+    background-color: gold;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 50%;
+    cursor: pointer;
+    font: bold 2.2vh/1em "Aleo", "Tahoma";
+    transition: all 0.3s ease 0s;
+}
+
+.get-again {
+    right: 130px;
+    font-size: 0;
+    line-height: 0;
+}
+
+.get-up:hover,
+.get-again:hover {
+    background-color: black;
+    color: gold;
+}
+
+.hide {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .ancients-list {
+        width: 65%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .ancients-list__elem {
+        margin-bottom: 20px;
+    }
+
+    .info-text {
+        position: static;
+        transform: translate(0, 0);
+    }
+
+    body {
+        background: #000 url(../assets/home.jpg) center center no-repeat;
+        background-size: cover;
+    }
+
+    .ancients,
+    .levels-list,
+    .result-cards {
+        background: none;
+        width: 65%;
+        margin: 0 auto;
+    }
+
+    .result-cards {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .result-cards__structure {
+        margin-bottom: 20px;
+    }
+
+    .cards {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .close-cards {
+        margin-bottom: 20px;
+    }
+
+    .open-cards {
+        margin-bottom: 20px;
+    }
+}

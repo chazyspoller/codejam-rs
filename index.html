@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="ancients">
+        <div class="ancients-list">
+            <p class="info-text">choose your ancient</p>
+            <div class="ancients-list__elem" data-ancient="azathoth">
+                <img src="assets/Ancients/Azathoth.jpg" alt="Azathoth">
+            </div>
+            <div class="ancients-list__elem" data-ancient="cthulhu">
+                <img src="assets/Ancients/Cthulthu.jpg" alt="Cthulthu">
+            </div>
+            <div class="ancients-list__elem" data-ancient="iogSothoth">
+                <img src="assets/Ancients/IogSothoth.jpg" alt="IogSothoth">
+            </div>
+            <div class="ancients-list__elem" data-ancient="shubNiggurath">
+                <img src="assets/Ancients/ShubNiggurath.jpg" alt="ShubNiggurath">
+            </div>
+        </div>
+    </div>
+    <div class="levels-list">
+        <p class="message info-text info-text-level" style="color: red">first choose the ancient one</p>
+        <p class="info-text info-text-level hide" data-level-title>choose your level</p>
+        <input type="radio" name="level" id="pre-easy" disabled>
+        <label for="pre-easy">Pre-easy</label>
+        <input type="radio" name="level" id="easy" disabled>
+        <label for="easy">Easy</label>
+        <input type="radio" name="level" id="normal" disabled>
+        <label for="normal">normal</label>
+        <input type="radio" name="level" id="hard" disabled>
+        <label for="hard">Hard</label>
+        <input type="radio" name="level" id="nightmare" disabled>
+        <label for="nightmare">Nightmare</label>
+    </div>
+    <div class="result-cards hide">
+        <div class="result-cards__structure">
+            <div class="result-cards__stage result-cards__stage--first" data-stage="1">
+                <div class="count-res-wrap result-cards__easy" data-cards="greenCards" data-color="green">0</div>
+                <div class="count-res-wrap result-cards__normal" data-cards="brownCards" data-color="brown">0</div>
+                <div class="count-res-wrap result-cards__hard" data-cards="blueCards" data-color="blue">0</div>
+            </div>
+            <div class="result-cards__stage result-cards__stage--second" data-stage="2">
+                <div class="count-res-wrap result-cards__easy" data-cards="greenCards" data-color="green">0</div>
+                <div class="count-res-wrap result-cards__normal" data-cards="brownCards" data-color="brown">0</div>
+                <div class="count-res-wrap result-cards__hard" data-cards="blueCards" data-color="blue">0</div>
+            </div>
+            <div class="result-cards__stage result-cards__stage--third" data-stage="3">
+                <div class="count-res-wrap result-cards__easy" data-cards="greenCards" data-color="green">0</div>
+                <div class="count-res-wrap result-cards__normal" data-cards="brownCards" data-color="brown">0</div>
+                <div class="count-res-wrap result-cards__hard" data-cards="blueCards" data-color="blue">0</div>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="close-cards close-cards--hide"></div>
+            <div class="open-cards"></div>
+        </div>
+        <button class="get-again hide">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z" />
+                <path
+                    d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z" />
+            </svg>
+        </button>
+        <button class="get-up hide">New</button>
+    </div>
+    <script src="js/index.js" type="module"></script>
+</body>
+
+</html>
